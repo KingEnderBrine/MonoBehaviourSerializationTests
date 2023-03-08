@@ -76,6 +76,7 @@ namespace MonoBehaviourTests
         public CyclicReferencePart1 cyclicReference;
         public HighLevelDepth highLevelDepth;
         public HighLevelDepthStruct highLevelDepthStruct;
+        public HighLevelDepthInheritance highLevelDepthInheritance;
 
         public ArrayHighLevelDepth arrayHighLevelDepth;
 

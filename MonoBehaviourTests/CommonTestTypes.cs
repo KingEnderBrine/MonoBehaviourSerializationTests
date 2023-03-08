@@ -1047,4 +1047,144 @@ namespace MonoBehaviourTests.CommonTestTypes
     {
         public int depthLevel19IntField;
     }
+
+    [Serializable]
+    public class HighLevelDepthInheritance : InheritanceDepthLevel1
+    {
+        public int highLevelDepthInheritanceIntField;
+        public UnityEngine.Object highLevelDepthInheritanceUnityObjectField;
+    }
+
+    [Serializable]
+    public class InheritanceDepthLevel1 : InheritanceDepthLevel2
+    {
+        public int inheritanceDepthLevel1IntField;
+        public UnityEngine.Object inheritanceDepthLevel1UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel2 : InheritanceDepthLevel3
+    {
+        public int inheritanceDepthLevel2IntField;
+        public UnityEngine.Object inheritanceDepthLevel2UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel3 : InheritanceDepthLevel4
+    {
+        public int inheritanceDepthLevel3IntField;
+        public UnityEngine.Object inheritanceDepthLevel3UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel4 : InheritanceDepthLevel5
+    {
+        public int inheritanceDepthLevel4IntField;
+        public UnityEngine.Object inheritanceDepthLevel4UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel5 : InheritanceDepthLevel6
+    {
+        public int inheritanceDepthLevel5IntField;
+        public UnityEngine.Object inheritanceDepthLevel5UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel6 : InheritanceDepthLevel7
+    {
+        public int inheritanceDepthLevel6IntField;
+        public UnityEngine.Object inheritanceDepthLevel6UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel7 : InheritanceDepthLevel8
+    {
+        public int inheritanceDepthLevel7IntField;
+        public UnityEngine.Object inheritanceDepthLevel7UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel8 : InheritanceDepthLevel9
+    {
+        public int inheritanceDepthLevel8IntField;
+        public UnityEngine.Object inheritanceDepthLevel8UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel9 : InheritanceDepthLevel10
+    {
+        public int inheritanceDepthLevel9IntField;
+        public UnityEngine.Object inheritanceDepthLevel9UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel10 : InheritanceDepthLevel11
+    {
+        public int inheritanceDepthLevel10IntField;
+        public UnityEngine.Object inheritanceDepthLevel10UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel11 : InheritanceDepthLevel12
+    {
+        public int inheritanceDepthLevel11IntField;
+        public UnityEngine.Object inheritanceDepthLevel11UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel12 : InheritanceDepthLevel13
+    {
+        public int inheritanceDepthLevel12IntField;
+        public UnityEngine.Object inheritanceDepthLevel12UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel13 : InheritanceDepthLevel14
+    {
+        public int inheritanceDepthLevel13IntField;
+        public UnityEngine.Object inheritanceDepthLevel13UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel14 : InheritanceDepthLevel15
+    {
+        public int inheritanceDepthLevel14IntField;
+        public UnityEngine.Object inheritanceDepthLevel14UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel15 : InheritanceDepthLevel16
+    {
+        public int inheritanceDepthLevel15IntField;
+        public UnityEngine.Object inheritanceDepthLevel15UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel16 : InheritanceDepthLevel17
+    {
+        public int inheritanceDepthLevel16IntField;
+        public UnityEngine.Object inheritanceDepthLevel16UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel17 : InheritanceDepthLevel18
+    {
+        public int inheritanceDepthLevel17IntField;
+        public UnityEngine.Object inheritanceDepthLevel17UnityObjectField;
+    }
+    
+    [Serializable]
+    public class InheritanceDepthLevel18 : InheritanceDepthLevel19
+    {
+        public int inheritanceDepthLevel18IntField;
+        public UnityEngine.Object inheritanceDepthLevel18UnityObjectField;
+    }
+
+    [Serializable]
+    public class InheritanceDepthLevel19
+    {
+        public int inheritanceDepthLevel19IntField;
+        public UnityEngine.Object inheritanceDepthLevel19UnityObjectField;
+    }
 }
