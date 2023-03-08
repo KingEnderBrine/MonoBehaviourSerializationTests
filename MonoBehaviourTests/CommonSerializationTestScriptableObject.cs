@@ -187,6 +187,8 @@ namespace MonoBehaviourTests
         public List<SimpleScriptableObject> simpleScriptableObjectList;
         public List<AbstractScriptableObject> abstractScriptableObjectList;
 
+        public SelfReferenceMonoBehaviour selfReferenceMonoBehaviour;
+
         #endregion
 
         #region Unity special types

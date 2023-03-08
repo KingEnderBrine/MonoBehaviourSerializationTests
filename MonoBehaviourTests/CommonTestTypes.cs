@@ -394,6 +394,11 @@ namespace MonoBehaviourTests.CommonTestTypes
         public int selfReferenceIntField;
     }
 
+    public class SelfReferenceMonoBehaviour : MonoBehaviour
+    {
+        public SelfReferenceMonoBehaviour selfReferenceMonoBehaviourField;
+    }
+
     [Serializable]
     public class CyclicReferencePart1
     {
