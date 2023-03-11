@@ -1,5 +1,6 @@
 ﻿#if UNITY_2019_3_OR_NEWER
 using MonoBehaviourTests.CommonTestTypes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,27 @@ namespace MonoBehaviourTests
         [SerializeReference]
         public SerializedClass serializedClass_Type;
         [SerializeReference]
+        private SerializedClass private_serializedClass_Type;
+        [SerializeReference]
+        [SerializeField]
+        private SerializedClass private_serialize_serializedClass_Type;
+        [SerializeReference]
+        [NonSerialized]
+        public SerializedClass public_nonSerialize_serializedClass_Type;
+        [SerializeReference]
+        [HideInInspector]
+        public SerializedClass public_hideInspector_serializedClass_Type;
+        [SerializeReference]
         public NonSerializedClass nonSerializedClass_Type;
         [SerializeReference]
         public InnerSerializeReferenceClass innerSerializeReferenceClass_Type;
+
+        [SerializeReference]
+        public SerializedClass.PublicNestedSerializedClass publicNestedSerializedClass;
+        [SerializeReference]
+        public SerializedClass.PublicNestedNonSerializedClass publicNestedNonSerializedClass;
+        [SerializeReference]
+        public HighLevelNesting.NestingLevel1.NestingLevel2.NestingLevel3.NestingLevel4.NestingLevel5.NestingLevel6.NestingLevel7.NestingLevel8.NestingLevel9.NestingLevel10.NestingLevel11.NestingLevel12.NestingLevel13.NestingLevel14.NestingLevel15.NestingLevel16.NestingLevel17.NestingLevel18.NestingLevel19 highLevelNesting;
 
         #endregion
 
@@ -43,6 +62,11 @@ namespace MonoBehaviourTests
         public NonSerializedStruct nonSerializedStruct_Type;
         [SerializeReference]
         public InnerSerializeReferenceStruct innerSerializeReferenceStruct_Type;
+        
+        [SerializeReference]
+        public SerializedStruct.PublicNestedSerializedStruct publicNestedSerializedStruct;
+        [SerializeReference]
+        public SerializedStruct.PublicNestedNonSerializedStruct publicNestedNonSerializedStruct;
 
         #endregion
 
@@ -135,9 +159,16 @@ namespace MonoBehaviourTests
             nonSerializedClass_Type = new NonSerializedClass();
             innerSerializeReferenceClass_Type = new InnerSerializeReferenceClass { serializeReference = new NonSerializedClass() };
 
+            publicNestedSerializedClass = new SerializedClass.PublicNestedSerializedClass();
+            publicNestedNonSerializedClass = new SerializedClass.PublicNestedNonSerializedClass();
+            highLevelNesting = new HighLevelNesting.NestingLevel1.NestingLevel2.NestingLevel3.NestingLevel4.NestingLevel5.NestingLevel6.NestingLevel7.NestingLevel8.NestingLevel9.NestingLevel10.NestingLevel11.NestingLevel12.NestingLevel13.NestingLevel14.NestingLevel15.NestingLevel16.NestingLevel17.NestingLevel18.NestingLevel19();
+
             serializedStruct_Type = new SerializedStruct(false);
             nonSerializedStruct_Type = new NonSerializedStruct(false);
             innerSerializeReferenceStruct_Type = new InnerSerializeReferenceStruct { serializeReference = new NonSerializedStruct(false) };
+
+            publicNestedSerializedStruct = new SerializedStruct.PublicNestedSerializedStruct(false);
+            publicNestedNonSerializedStruct = new SerializedStruct.PublicNestedNonSerializedStruct(false);
 
             genericClass_int_Type = new GenericClass<int>();
             genericClass_string_Type = new GenericClass<string>();

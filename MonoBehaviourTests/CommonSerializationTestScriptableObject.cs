@@ -60,6 +60,10 @@ namespace MonoBehaviourTests
         //Shouldn't be serialized
         public NonSerializedClass nonSerializedClass;
 
+        public SerializedClass.PublicNestedSerializedClass publicNestedSerializedClass;
+        //Shouldn't be serialized
+        public SerializedClass.PublicNestedNonSerializedClass publicNestedNonSerializedClass;
+
         #endregion
 
         #region Structs
@@ -67,6 +71,10 @@ namespace MonoBehaviourTests
         public SerializedStruct serializedStruct;
         //Shouldn't be serialized
         public NonSerializedStruct nonSerializedStruct;
+
+        public SerializedStruct.PublicNestedSerializedStruct publicNestedSerializedStruct;
+        //Shouldn't be serialized
+        public SerializedStruct.PublicNestedNonSerializedStruct publicNestedNonSerializedStruct;
 
         #endregion
 

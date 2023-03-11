@@ -17,6 +17,11 @@ namespace MonoBehaviourTests.CommonTestTypes
         public UnityEngine.Object public_unityObject;
         public UnityEngine.Object[] public_unityObject_array;
 
+        [SerializeField]
+        private PrivateNestedSerializedClass privateNestedSerializedClass;
+        [SerializeField]
+        private PrivateNestedNonSerializedClass privateNestedNonSerializedClass;
+
         private int private_int = 124;
         private string private_string = "6348sgfd";
         private TestEnum private_testEnum = TestEnum.B;
@@ -57,6 +62,33 @@ namespace MonoBehaviourTests.CommonTestTypes
         private TestEnum private_hideInspector_testEnum = TestEnum.F;
         [HideInInspector]
         private UnityEngine.Object private_hideInspector_unityObject;
+
+
+        [Serializable]
+        public class PublicNestedSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
+
+        [Serializable]
+        private class PrivateNestedSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
+
+        public class PublicNestedNonSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
+
+        private class PrivateNestedNonSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
     }
 
     public class NonSerializedClass
@@ -114,6 +146,24 @@ namespace MonoBehaviourTests.CommonTestTypes
     {
         [SerializeReference]
         public object serializeReference;
+
+        [SerializeReference]
+        private PrivateNestedSerializedClass privateNestedSerializedClass;
+        [SerializeReference]
+        private PrivateNestedNonSerializedClass privateNestedNonSerializedClass;
+
+        [Serializable]
+        private class PrivateNestedSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
+
+        private class PrivateNestedNonSerializedClass
+        {
+            public int public_int = 4374;
+            public string public_string = "grsdgte";
+        }
     }
 #endif
 
@@ -124,6 +174,11 @@ namespace MonoBehaviourTests.CommonTestTypes
         public string public_string;
         public TestEnum public_testEnum;
         public UnityEngine.Object public_unityObject;
+
+        [SerializeField]
+        private PrivateNestedSerializedStruct privateNestedSerializedStruct;
+        [SerializeField]
+        private PrivateNestedNonSerializedStruct privateNestedNonSerializedStruct;
 
         private int private_int;
         private string private_string;
@@ -172,6 +227,9 @@ namespace MonoBehaviourTests.CommonTestTypes
             public_string = "grsdgte";
             public_testEnum = TestEnum.A;
 
+            privateNestedSerializedStruct = new PrivateNestedSerializedStruct();
+            privateNestedNonSerializedStruct = new PrivateNestedNonSerializedStruct();
+
             private_int = 124;
             private_string = "6348sgfd";
             private_testEnum = TestEnum.B;
@@ -191,6 +249,56 @@ namespace MonoBehaviourTests.CommonTestTypes
             private_hideInspector_int = 98790;
             private_hideInspector_string = "gsfs5 ye rsedg ";
             private_hideInspector_testEnum = TestEnum.F;
+        }
+
+        [Serializable]
+        public struct PublicNestedSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PublicNestedSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
+        }
+
+        [Serializable]
+        private struct PrivateNestedSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PrivateNestedSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
+        }
+
+        public struct PublicNestedNonSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PublicNestedNonSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
+        }
+
+        private struct PrivateNestedNonSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PrivateNestedNonSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
         }
     }
 
@@ -276,6 +384,37 @@ namespace MonoBehaviourTests.CommonTestTypes
     {
         [SerializeReference]
         public object serializeReference;
+
+        [SerializeReference]
+        private PrivateNestedSerializedStruct privateNestedSerializedStruct;
+        [SerializeReference]
+        private PrivateNestedNonSerializedStruct privateNestedNonSerializedStruct;
+
+
+        [Serializable]
+        private struct PrivateNestedSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PrivateNestedSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
+        }
+
+        private struct PrivateNestedNonSerializedStruct
+        {
+            public int public_int;
+            public string public_string;
+
+            public PrivateNestedNonSerializedStruct(bool _ = false) : this()
+            {
+                public_int = 4374;
+                public_string = "grsdgte";
+            }
+        }
     }
 #endif
 
@@ -1191,5 +1330,144 @@ namespace MonoBehaviourTests.CommonTestTypes
     {
         public int inheritanceDepthLevel19IntField;
         public UnityEngine.Object inheritanceDepthLevel19UnityObjectField;
+    }
+
+    [Serializable]
+    public class HighLevelNesting
+    {
+        public NestingLevel1 nestingLevel1Field;
+        public int highLevelDepthIntField;
+
+        [Serializable]
+        public class NestingLevel1
+        {
+            public NestingLevel2 nestingLevel2Field;
+            public int nestingLevel1IntField;
+
+            [Serializable]
+            public class NestingLevel2
+            {
+                public NestingLevel3 nestingLevel3Field;
+                public int nestingLevel2IntField;
+
+                [Serializable]
+                public class NestingLevel3
+                {
+                    public NestingLevel4 nestingLevel4Field;
+                    public int nestingLevel3IntField;
+
+                    [Serializable]
+                    public class NestingLevel4
+                    {
+                        public NestingLevel5 nestingLevel5Field;
+                        public int nestingLevel4IntField;
+
+                        [Serializable]
+                        public class NestingLevel5
+                        {
+                            public NestingLevel6 nestingLevel6Field;
+                            public int nestingLevel5IntField;
+
+                            [Serializable]
+                            public class NestingLevel6
+                            {
+                                public NestingLevel7 nestingLevel7Field;
+                                public int nestingLevel6IntField;
+
+                                [Serializable]
+                                public class NestingLevel7
+                                {
+                                    public NestingLevel8 nestingLevel8Field;
+                                    public int nestingLevel7IntField;
+
+                                    [Serializable]
+                                    public class NestingLevel8
+                                    {
+                                        public NestingLevel9 nestingLevel9Field;
+                                        public int nestingLevel8IntField;
+
+                                        [Serializable]
+                                        public class NestingLevel9
+                                        {
+                                            public NestingLevel10 nestingLevel10Field;
+                                            public int nestingLevel9IntField;
+
+                                            [Serializable]
+                                            public class NestingLevel10
+                                            {
+                                                public NestingLevel11 nestingLevel11Field;
+                                                public int nestingLevel10IntField;
+
+                                                [Serializable]
+                                                public class NestingLevel11
+                                                {
+                                                    public NestingLevel12 nestingLevel12Field;
+                                                    public int nestingLevel11IntField;
+
+                                                    [Serializable]
+                                                    public class NestingLevel12
+                                                    {
+                                                        public NestingLevel13 nestingLevel13Field;
+                                                        public int nestingLevel12IntField;
+
+                                                        [Serializable]
+                                                        public class NestingLevel13
+                                                        {
+                                                            public NestingLevel14 nestingLevel14Field;
+                                                            public int nestingLevel13IntField;
+
+                                                            [Serializable]
+                                                            public class NestingLevel14
+                                                            {
+                                                                public NestingLevel15 nestingLevel15Field;
+                                                                public int nestingLevel14IntField;
+
+                                                                [Serializable]
+                                                                public class NestingLevel15
+                                                                {
+                                                                    public NestingLevel16 nestingLevel16Field;
+                                                                    public int nestingLevel15IntField;
+
+                                                                    [Serializable]
+                                                                    public class NestingLevel16
+                                                                    {
+                                                                        public NestingLevel17 nestingLevel17Field;
+                                                                        public int nestingLevel16IntField;
+
+                                                                        [Serializable]
+                                                                        public class NestingLevel17
+                                                                        {
+                                                                            public NestingLevel18 nestingLevel18Field;
+                                                                            public int nestingLevel17IntField;
+
+                                                                            [Serializable]
+                                                                            public class NestingLevel18
+                                                                            {
+                                                                                public NestingLevel19 nestingLevel19Field;
+                                                                                public int nestingLevel18IntField;
+
+                                                                                [Serializable]
+                                                                                public class NestingLevel19
+                                                                                {
+                                                                                    public int nestingLevel19IntField;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
